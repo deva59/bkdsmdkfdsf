@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Message</title>
+  <style>
+    body {
+      text-align: center;
+      background: #fff0f5; /* soft pink background */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    #msg {
+      font-size: 2em;
+      color: #ff1493; /* deep pink */
+      opacity: 0;
+      transition: opacity 1s, transform 1s;
+      transform: scale(0.5);
+    }
+    #msg.show {
+      opacity: 1;
+      transform: scale(1);
+      animation: heartBeat 1s infinite alternate;
+    }
+
+    @keyframes heartBeat {
+      0% { transform: scale(1); color: #ff1493; }
+      50% { transform: scale(1.1); color: #ff69b4; }
+      100% { transform: scale(1); color: #ff1493; }
+    }
+
+    #subtitle {
+      font-size: 1.2em;
+      color: #ff69b4;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 2s;
+    }
+    #subtitle.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎂 Touch anywhere to see your surprise 🎂</h2>
+  <div id="msg">❤️ Happiest Birthday Akshuuu! ❤️</div>
+
+  <script>
+    document.body.addEventListener("click", () => {
+      document.getElementById("msg").classList.add("show");
+      document.getElementById("subtitle").classList.add("show");
+    });
+  </script>
+</body>
+</html>
